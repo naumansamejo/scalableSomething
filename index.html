@@ -3,10 +3,10 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+ 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css"  href="bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
     
     <title>scalableSomething - ourFirstHackathon</title>
 </head>
@@ -16,12 +16,66 @@
 
         <div class="container">
 
-            
+            <div class="row">
+
+                <div class="col-lg-6 offset-lg-3">
+
+                    <div class="search-main text-center">
+
+                        <h2>scalableSomething</h2>
+    
+    
+                        <div class="form-group mt-4">
+    
+                            <input class="form-control typeahead" data-provide="typeahead" data-source="[abc, xyz, fbd]" type="text" name="q" id="q" placeholder="Search..." autocomplete="off">
+    
+                        </div>
+
+                    </div>
+
+
+                    <div class="results-main">
+
+
+                        <p class="text-center" style="color:#9A9A9A;">
+                            <i>
+                                Results will appear here.
+                            </i>
+                        </p>
+
+                        <ul class="results">
+
+                            <li>
+                                <a href="#">
+                                    <h4>Result is here.</h4>
+                                    <span>Some description.</span>
+                                </a>
+                            </li>
+
+                            
+                            <li>
+                                <a href="#">
+                                    <h4>Result is here.</h4>
+                                    <span>Some description.</span>
+                                </a>
+                            </li>
+    
+
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
 
         </div>
         
     </section>
 
-    <script src="main.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/typeahead.jquery.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

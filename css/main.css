@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Space+Mono:400,400i,700,700i');
+
+*{
+    font-family: inherit;
+}
+body{
+    font-family: "Space Mono", monospace;
+}
+
+
+.section-main{
+    padding: 100px 0;
+}
+.form-control{
+    padding: 15px 20px;
+    border-radius: 3px;
+    outline: none;
+    border: solid 2px rgba(0,0,0,.1);
+    border-radius: 35px;
+    box-shadow:none !important;
+}
+.twitter-typeahead{
+    width: 100%;
+    display: block;
+}
+.form-control:focus{
+    border-color: rgba(0,0,0,.2);
+}
+
+.search-main{
+    padding-top: 100px;
+    padding-bottom: 50px;
+    transition: all .3s ease;
+    position: relative;
+    z-index: 10;
+}
+.search-main > h2{
+    transition: all .3s ease;
+}
+.show-results .search-main{
+    transform: translateY(-150px);
+}
+.show-results .results{
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+}
+.show-results .search-main > h2{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.results-main{
+    position: relative;
+}
+.results{
+    margin-top: -150px;
+    opacity: 0;
+    transition: all .3s ease;
+    transform: translateY(-50px);
+    visibility: hidden;
+    list-style: none;
+    padding: 0;
+    border: solid 2px #CCC;
+    overflow: hidden;
+    border-radius: 5px;
+    background: #FFF;
+}
+.results > li{
+    padding: 20px 15px;
+    border-bottom: solid 1px #CCC;
+    margin-bottom: -1px;
+}
+.results > li:hover{
+    background: rgba(0,0,0,.05);
+}
+.results > li > a{
+    display: block;
+    color: #404040;
+    text-align: left;
+}
+.results h4{
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+    margin-bottom: 4px;
+}
+.results span{
+    font-size: 16px; 
+    font-style: italic;
+    color: rgba(0,0,0,.6);
+}
+
+
+.tt-menu{
+    position: relative;
+    width: 100%;
+    background: #FFF;
+    border:solid 2px #CCC;
+    border-radius: 5px;
+    padding: 3px 0;
+    text-align: left;
+    margin-top: 20px;
+    z-index:10;
+}
+.tt-menu:before{
+    content: " ";
+    border-left: solid 15px transparent;
+    border-right: solid 15px transparent;
+    border-bottom: solid 15px #CCC;
+    position: absolute;
+    top: -15px;
+    left: 30px;
+}
+.tt-menu .tt-suggestion:hover,
+.tt-menu .tt-cursor{
+    background: #F0F0F0;
+}
+.tt-menu .tt-suggestion{
+    padding: 5px 15px;
+}
