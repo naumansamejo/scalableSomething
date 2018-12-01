@@ -1,7 +1,7 @@
 name = "/samples/usesample01.pdf";
 names = ["/samples/usesample01.pdf", "/samples/usesample02.pdf", "/samples/usesample03.pdf"];
 
-finalData = {};
+myData = {};
 
 $(document).ready(function() {
 
@@ -21,13 +21,15 @@ var parse_content = function(content, keywords){
 
         for (var i=1; i<result.pageTables[0].tables.length; i++) {
             
-            if (finalData[result.pageTables[0].tables[i][0]]) {
-                finalData[result.pageTables[0].tables[i][0]].push(result.pageTables[0].tables[i][1])
+            if (myData[result.pageTables[0].tables[i][0].trim()]) {
+                myData[result.pageTables[0].tables[i][0].trim()].push(result.pageTables[0].tables[i][1].trim());
             } else {
-                finalData[result.pageTables[0].tables[i][0]] = [result.pageTables[0].tables[i][1]]
+                myData[result.pageTables[0].tables[i][0].trim()] = [result.pageTables[0].tables[i][1].trim()];
             }
 
-            keywords.push(result.pageTables[0].tables[i][0]);
+            if (!(states.includes(result.pageTables[0].tables[i][0].trim()))) {
+                states.push(result.pageTables[0].tables[i][0].trim());   
+            }
         }
 
     });
