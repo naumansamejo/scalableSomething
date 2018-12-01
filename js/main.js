@@ -22,7 +22,7 @@ var substringMatcher = function(strs) {
       cb(matches);
     };
   };
-  
+
     var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
     'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
     'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
@@ -38,10 +38,50 @@ var substringMatcher = function(strs) {
         hint: true,
         highlight: true,
         minLength: 1
-      },
-      {
+    },
+    {
         name: 'states',
         source: substringMatcher(states)
-      });
+    });
+
+});
+
+
+$(window).on("load", function(){
+    data = {"pageTables":[{"page":2,"tables":[["DEMOGRAPHIC INDICATORS ","PDS-2007 ","PDS-2006 "],["Sex Ratio ","105 ","106 "],["Crude Birth Rate (CBR) ","25.6 ","25.9 "],["General Fertility Rate (GFR) ","108.0 ","108.8 "],["Total Fertility Rate ","3.7 ","3.7 "],["Crude Death Rate (CDR) ","6.8 ","7.0 "],["Infant Mortality Rate (IMR)  ","75.2 ","76.2 "],["Maternal Mortality Rate ","254 ","318 "],["Natural Growth Rate ","1.88 ","1.89 "],["Life Expectancy at Birth \n                           Male    (Years) \n                           Female (Years) "," \n64 \n68 "," \n64 \n67 "]],"merges":{},"merge_alias":{},"width":3,"height":10}],"numPages":2,"currentPages":2}
+
+    data = data.pageTables[0].tables;
+
+
+    keyword = "Sex Ratio";
+    keyword = keyword.trim();
+    chartData = [
+        ['Year', keyword]
+    ];
+
+    for(i=1; i<data.length-1; i++){
+        
+        if(data[i][0].trim() == keyword){
+            chartData.push(['2006', parseInt(data[i][1]) ]);
+            chartData.push(['2007', parseInt(data[i][2])  ]);
+            chartData.push(['2008',parseInt(data[i][3]) ]);
+            
+            break;
+        }
+
+    }
+
+ 
+
+    var data = google.visualization.arrayToDataTable(chartData);
+
+    var options = {
+    title: keyword,
+    legend: { position: 'bottom' }
+    };
+
+    chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
+    chart.draw(data, options);
 
 });
