@@ -1,5 +1,5 @@
 name = "/samples/usesample01.pdf";
-names = ["/samples/usesample01.pdf", "/samples/usesample02.pdf", "/samples/usesample03.pdf"];
+names = ["/samples/usesample01.pdf", "/samples/usesample02.pdf", "/samples/usesample03.pdf", "/samples/usesample04.pdf", "/samples/usesample05.pdf"];
 
 myData = {};
 
