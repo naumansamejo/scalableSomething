@@ -134,7 +134,7 @@ function stuff(keyword) {
 
       chart.draw(data, options);
 
-      $(".xi").html("<strong>Average: </strong> <span>" + average + "</span> <strong>Standard Deviation: </strong> <span>" + Math.sqrt(variance) + "</span>");
+      $(".xi").html("<strong>Average: </strong> <span>" + average.toFixed(2) + "</span> <strong>Standard Deviation: </strong> <span>" + Math.sqrt(variance).toFixed(2) + "</span>");
 
 
     }
